@@ -38,7 +38,7 @@ public class ButtonsScript : MonoBehaviour
             redBP.SetActive(false);
 
         // Yellow button pressed.
-        if (Input.GetKey(KeyCode.D))
+        if (Input.GetKey(KeyCode.J))
         {
             yellowBP.SetActive(true);
         }
@@ -46,7 +46,7 @@ public class ButtonsScript : MonoBehaviour
             yellowBP.SetActive(false);
 
         // Blue button pressed.
-        if (Input.GetKey(KeyCode.F))
+        if (Input.GetKey(KeyCode.K))
         {
             blueBP.SetActive(true);
         }
@@ -54,7 +54,7 @@ public class ButtonsScript : MonoBehaviour
             blueBP.SetActive(false);
 
         // Orange button pressed.
-        if (Input.GetKey(KeyCode.G))
+        if (Input.GetKey(KeyCode.L))
         {
             orangeBP.SetActive(true);
         }

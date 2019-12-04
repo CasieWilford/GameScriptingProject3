@@ -13,6 +13,7 @@ public class Activator : MonoBehaviour
     public Material pressedMat;
 
     GameObject note;
+    
     //Transform note;
 
     private void Awake()
@@ -32,12 +33,46 @@ public class Activator : MonoBehaviour
     {
         if (Input.GetKeyDown(key) && active)
         {
-            Destroy(note);
-        }
+            if (Input.GetKeyDown(KeyCode.A) && active)
+            {
+                StartCoroutine(GreenAni());
+            }
 
-        if (Input.GetKeyDown(key))
+            if (Input.GetKeyDown(KeyCode.S) && active)
+            {
+                StartCoroutine(RedAni());
+            }
+
+            if (Input.GetKeyDown(KeyCode.J) && active)
+            {
+                StartCoroutine(YellowAni());
+            }
+
+            if (Input.GetKeyDown(KeyCode.K) && active)
+            {
+                StartCoroutine(BlueAni());
+            }
+
+            if (Input.GetKeyDown(KeyCode.L) && active)
+            {
+                StartCoroutine(OrangeAni());
+            }
+
+            Destroy(note);
+            ScoreScript.scoreValue += 20;
+            NoteCounter.noteValue += 1;
+
+            active = false;
+        }
+        else if (Input.GetKeyDown(key) && !active)
         {
-           // StartCoroutine(KeyPressed());
+            NoteCounter.noteValue = 0;
+        }
+        
+        // Exits Program.
+        if (Input.GetKey(KeyCode.Escape))
+        {
+            Application.Quit();
         }
     }
 
@@ -54,10 +89,53 @@ public class Activator : MonoBehaviour
         active = false;
     }
 
-    /*IEnumerator KeyPressed()
+    // Green Flame Coroutine.
+    IEnumerator GreenAni()
     {
-        mr.material = pressedMat;
-        yield return new WaitForSeconds(0.1f);
-        mr.material = initial;
-    }*/
+        ScoreScript.greenActive = true;
+
+        yield return new WaitForSeconds(.16f);
+
+        ScoreScript.greenActive = false;
+    }
+
+    // Red Flame Coroutine.
+    IEnumerator RedAni()
+    {
+        ScoreScript.redActive = true;
+
+        yield return new WaitForSeconds(.16f);
+
+        ScoreScript.redActive = false;
+    }
+
+    // Yellow Flame Coroutine.
+    IEnumerator YellowAni()
+    {
+        ScoreScript.yellowActive = true;
+
+        yield return new WaitForSeconds(.16f);
+
+        ScoreScript.yellowActive = false;
+    }
+
+    // Blue Flame Coroutine.
+    IEnumerator BlueAni()
+    {
+        ScoreScript.blueActive = true;
+
+        yield return new WaitForSeconds(.16f);
+
+        ScoreScript.blueActive = false;
+    }
+
+    // Orange Flame Coroutine.
+    IEnumerator OrangeAni()
+    {
+        ScoreScript.orangeActive = true;
+
+        yield return new WaitForSeconds(.16f);
+
+        ScoreScript.orangeActive = false;
+    }
 }
