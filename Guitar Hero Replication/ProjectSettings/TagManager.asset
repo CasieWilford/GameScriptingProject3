@@ -5,6 +5,11 @@ TagManager:
   serializedVersion: 2
   tags:
   - Note
+  - GNote
+  - BNote
+  - ONote
+  - YNote
+  - RNote
   layers:
   - Default
   - TransparentFX

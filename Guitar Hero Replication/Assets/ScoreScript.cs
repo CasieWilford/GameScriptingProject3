@@ -9,6 +9,8 @@ public class ScoreScript : MonoBehaviour
     public static int scoreValue = 0;
     Text score;
 
+    float totalScore; 
+    
     public GameObject greeNoteFlame;
     public GameObject redNoteFlame;
     public GameObject yellowNoteFlame;
@@ -20,7 +22,7 @@ public class ScoreScript : MonoBehaviour
     public static bool yellowActive;
     public static bool blueActive;
     public static bool orangeActive;
-
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -36,12 +38,13 @@ public class ScoreScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        score.text = "Score: " + scoreValue;
-
+        score.text = "" + scoreValue;
+        
         // Green Note Flame Animation.
         if (greenActive)
         {
             greeNoteFlame.SetActive(true);
+            SoundScript.gActi = true;
         }
         else
             greeNoteFlame.SetActive(false);
@@ -50,6 +53,7 @@ public class ScoreScript : MonoBehaviour
         if (redActive)
         {
             redNoteFlame.SetActive(true);
+            SoundScript.rActi = true;
         }
         else
             redNoteFlame.SetActive(false);
@@ -58,6 +62,7 @@ public class ScoreScript : MonoBehaviour
         if (yellowActive)
         {
             yellowNoteFlame.SetActive(true);
+            SoundScript.yActi = true;
         }
         else
             yellowNoteFlame.SetActive(false);
@@ -66,6 +71,7 @@ public class ScoreScript : MonoBehaviour
         if (blueActive)
         {
             blueNoteFlame.SetActive(true);
+            SoundScript.bActi = true;
         }
         else
             blueNoteFlame.SetActive(false);
@@ -74,6 +80,7 @@ public class ScoreScript : MonoBehaviour
         if (orangeActive)
         {
             orangeNoteFlame.SetActive(true);
+            SoundScript.oActi = true;
         }
         else
             orangeNoteFlame.SetActive(false);

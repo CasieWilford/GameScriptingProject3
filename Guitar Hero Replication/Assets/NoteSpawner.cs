@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+// Manually spawn notes.
 public class NoteSpawner : MonoBehaviour
 {
     public GameObject note;

@@ -190,7 +190,7 @@ GameObject:
   - component: {fileID: 4321714264700631006}
   m_Layer: 0
   m_Name: Blue Note
-  m_TagString: Note
+  m_TagString: BNote
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

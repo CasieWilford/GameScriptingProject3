@@ -21,9 +21,6 @@ public class BarSpawner : MonoBehaviour
     {
         if (Time.time > nextBar)
         {
-
-            Debug.Log("beans");
-
             Instantiate(horizontalBar, transform.position, Quaternion.identity);
             nextBar = Time.time + spawnRate;
         }

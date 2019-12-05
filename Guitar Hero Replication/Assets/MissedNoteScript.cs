@@ -18,7 +18,8 @@ public class MissedNoteScript : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.tag.Equals("Note"))
+        if(other.gameObject.tag.Equals("GNote") || other.gameObject.tag.Equals("RNote") ||
+            other.gameObject.tag.Equals("YNote") || other.gameObject.tag.Equals("BNote") || other.gameObject.tag.Equals("ONote"))
         {
             NoteCounter.noteValue = 0;
         }

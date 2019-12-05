@@ -21,8 +21,8 @@ public class RandomNoteSpawner : MonoBehaviour
     public Transform yellowLocation;
     public Transform blueLocation;
     public Transform orangeLocation;
-
-
+    
+    
     bool numberGen = false;
 
     // Start is called before the first frame update
@@ -37,8 +37,6 @@ public class RandomNoteSpawner : MonoBehaviour
     {
         if (Time.time > nextNote)
         {
-            randomNum = Random.Range(1, 9);
-
             numberGen = true;
 
             StartCoroutine(NumberGen());
@@ -62,14 +60,17 @@ public class RandomNoteSpawner : MonoBehaviour
                 case 5:
                     Instantiate(orangeNote, orangeLocation.position, Quaternion.identity);
                     break;
+                // Spawns green and red notes.
                 case 6:
                     Instantiate(greenNote, greenLocation.position, Quaternion.identity);
                     Instantiate(redNote, redLocation.position, Quaternion.identity);
                     break;
+                // Spawns blue and orange notes.
                 case 7:
                     Instantiate(blueNote, blueLocation.position, Quaternion.identity);
                     Instantiate(orangeNote, orangeLocation.position, Quaternion.identity);
                     break;
+                // Spawns yellow and green notes.
                 case 8:
                     Instantiate(greenNote, greenLocation.position, Quaternion.identity);
                     Instantiate(yellowNote, yellowLocation.position, Quaternion.identity);

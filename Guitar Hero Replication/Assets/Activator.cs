@@ -7,14 +7,21 @@ public class Activator : MonoBehaviour
     MeshRenderer mr;
 
     public KeyCode key;
+
     bool active = false;
 
+    bool greenActive = false;
+    bool redActive = false;
+    bool yellowActive = false;
+    bool blueActive = false;
+    bool orangeActive = false;
+    
     Material initial;
     public Material pressedMat;
 
     GameObject note;
-    
-    //Transform note;
+
+    public static int multiplier = 1;
 
     private void Awake()
     {
@@ -33,36 +40,43 @@ public class Activator : MonoBehaviour
     {
         if (Input.GetKeyDown(key) && active)
         {
-            if (Input.GetKeyDown(KeyCode.A) && active)
+            if (Input.GetKeyDown(KeyCode.A) && greenActive)
             {
                 StartCoroutine(GreenAni());
             }
 
-            if (Input.GetKeyDown(KeyCode.S) && active)
+            if (Input.GetKeyDown(KeyCode.S) && redActive)
             {
                 StartCoroutine(RedAni());
             }
 
-            if (Input.GetKeyDown(KeyCode.J) && active)
+            if (Input.GetKeyDown(KeyCode.J) && yellowActive)
             {
                 StartCoroutine(YellowAni());
             }
 
-            if (Input.GetKeyDown(KeyCode.K) && active)
+            if (Input.GetKeyDown(KeyCode.K) && blueActive)
             {
                 StartCoroutine(BlueAni());
             }
 
-            if (Input.GetKeyDown(KeyCode.L) && active)
+            if (Input.GetKeyDown(KeyCode.L) && orangeActive)
             {
                 StartCoroutine(OrangeAni());
             }
+            
+            
 
             Destroy(note);
-            ScoreScript.scoreValue += 20;
+            ScoreScript.scoreValue += (20 * multiplier);
             NoteCounter.noteValue += 1;
 
             active = false;
+            greenActive = false;
+            redActive = false;
+            yellowActive = false;
+            blueActive = false;
+            orangeActive = false;
         }
         else if (Input.GetKeyDown(key) && !active)
         {
@@ -80,13 +94,53 @@ public class Activator : MonoBehaviour
     {
         active = true;
 
-        if (other.gameObject.tag.Equals("Note"))
+        if (other.gameObject.tag.Equals("GNote") || other.gameObject.tag.Equals("RNote") ||
+            other.gameObject.tag.Equals("YNote") || other.gameObject.tag.Equals("BNote") || other.gameObject.tag.Equals("ONote"))
+        {
             note = other.gameObject;
+        }
+
+        // Checks for Green Note.
+        if (other.gameObject.tag.Equals("GNote"))
+        {
+            greenActive = true;
+        }
+
+        // Checks for Red Note.
+
+        if (other.gameObject.tag.Equals("RNote"))
+        {
+            redActive = true;
+        }
+
+        // Checks for Yellow Note.
+        if (other.gameObject.tag.Equals("YNote"))
+        {
+            yellowActive = true;
+        }
+
+        // Checks for Blue Note.
+        if (other.gameObject.tag.Equals("BNote"))
+        {
+            blueActive = true;
+        }
+
+        // Checks for Orange Note.
+        if (other.gameObject.tag.Equals("ONote"))
+        {
+            orangeActive = true;
+        }
+
     }
 
     private void OnTriggerExit(Collider other)
     {
         active = false;
+        greenActive = false;
+        redActive = false;
+        yellowActive = false;
+        blueActive = false;
+        orangeActive = false;
     }
 
     // Green Flame Coroutine.
