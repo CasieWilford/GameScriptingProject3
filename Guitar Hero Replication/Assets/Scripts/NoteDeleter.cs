@@ -11,5 +11,10 @@ public class NoteDeleter : MonoBehaviour
         {
             Destroy(other.gameObject);
         }
+
+        if (other.gameObject.tag.Equals("Bar"))
+        {
+            Destroy(other.gameObject);
+        }
     }
 }

@@ -24,6 +24,5 @@ public class BarSpawner : MonoBehaviour
             Instantiate(horizontalBar, transform.position, Quaternion.identity);
             nextBar = Time.time + spawnRate;
         }
-
     }
 }

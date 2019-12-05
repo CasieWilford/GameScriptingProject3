@@ -10,6 +10,7 @@ TagManager:
   - ONote
   - YNote
   - RNote
+  - Bar
   layers:
   - Default
   - TransparentFX

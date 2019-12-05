@@ -49,7 +49,7 @@ public class NoteCounter : MonoBehaviour
             Debug.Log("Times 4");
         }
 
-        if (noteValue == 0)
+        if (noteValue < 10)
         {
             Activator.multiplier = 1;
             multiNum = 1;
