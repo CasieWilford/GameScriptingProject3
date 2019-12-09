@@ -65,8 +65,6 @@ public class Activator : MonoBehaviour
                 StartCoroutine(OrangeAni());
             }
             
-            
-
             Destroy(note);
             ScoreScript.scoreValue += (20 * multiplier);
             NoteCounter.noteValue += 1;
