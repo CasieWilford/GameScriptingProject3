@@ -68,6 +68,8 @@ public class Activator : MonoBehaviour
             Destroy(note);
             ScoreScript.scoreValue += (20 * multiplier);
             NoteCounter.noteValue += 1;
+            SingleNoteScore.singleNote += 1;
+            DoubleNoteScore.TotalNote += 1;
 
             active = false;
             greenActive = false;
@@ -79,6 +81,10 @@ public class Activator : MonoBehaviour
         else if (Input.GetKeyDown(key) && !active)
         {
             NoteCounter.noteValue = 0;
+
+            SingleNoteScore.singleNote = 0;
+            DoubleNoteScore.TotalNote = 0;
+            DoubleNoteScore.noteCount = 0;
         }
         
         // Exits Program.

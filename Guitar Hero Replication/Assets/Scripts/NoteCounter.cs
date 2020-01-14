@@ -10,6 +10,11 @@ public class NoteCounter : MonoBehaviour
 
     float multiNum = 1;
 
+    public GameObject noteBox;
+    public GameObject singleNoteText;
+    public GameObject doubleNoteText;
+    public GameObject tripleNoteText;
+    
     public GameObject twoText;
     public GameObject threeText;
     public GameObject fourText;
@@ -18,11 +23,16 @@ public class NoteCounter : MonoBehaviour
     void Start()
     {
         score = GetComponent<Text>();
-
-
+        
+        noteBox.SetActive(false);
+        singleNoteText.SetActive(false);
+        doubleNoteText.SetActive(false);
+        tripleNoteText.SetActive(false);
+        
         twoText.SetActive(false);
         threeText.SetActive(false);
         fourText.SetActive(false);
+        noteBox.SetActive(false);
     }
 
     // Update is called once per frame
@@ -77,6 +87,28 @@ public class NoteCounter : MonoBehaviour
             fourText.SetActive(false);
         }
 
-        score.text = "Notes: " + noteValue;
+        score.text = "Note: " + noteValue;
+
+        // Activates note box and note counter to appear.
+        if (noteValue >= 5)
+        {
+            noteBox.SetActive(true);
+            singleNoteText.SetActive(true);
+            doubleNoteText.SetActive(true);
+        }
+        else
+        {
+            noteBox.SetActive(false);
+            singleNoteText.SetActive(false);
+            doubleNoteText.SetActive(false);
+        }
+
+        // Activates hundredth place note value.
+        if (noteValue >= 100)
+        {
+            tripleNoteText.SetActive(true);
+        }
+        else
+            tripleNoteText.SetActive(false);
     }
 }
