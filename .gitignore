@@ -3,6 +3,9 @@
 [Oo]bj/
 [Bb]uild/
 [Bb]uilds/
+Guitar Hero Replication/Built Game/MonoBleedingEdge/etc/mono/2.0/
+Guitar Hero Replication/Built Game/MonoBleedingEdge/etc/mono/4.0/
+Guitar Hero Replication/Built Game/MonoBleedingEdge/etc/mono/4.5/
 Assets/AssetStoreTools*
 
 # Visual Studio cache directory
