@@ -90,7 +90,7 @@ public class NoteCounter : MonoBehaviour
         score.text = "Note: " + noteValue;
 
         // Activates note box and note counter to appear.
-        if (noteValue >= 5)
+        if (noteValue >= 10)
         {
             noteBox.SetActive(true);
             singleNoteText.SetActive(true);

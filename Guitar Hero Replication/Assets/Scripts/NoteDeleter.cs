@@ -10,6 +10,10 @@ public class NoteDeleter : MonoBehaviour
             other.gameObject.tag.Equals("YNote") || other.gameObject.tag.Equals("BNote") || other.gameObject.tag.Equals("ONote"))
         {
             Destroy(other.gameObject);
+
+            DoubleNoteScore.TotalNote = 0;
+            DoubleNoteScore.noteCount = 0;
+            SingleNoteScore.singleNote = 0;
         }
 
         if (other.gameObject.tag.Equals("Bar"))

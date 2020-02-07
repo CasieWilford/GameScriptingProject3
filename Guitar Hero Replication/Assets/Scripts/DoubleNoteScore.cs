@@ -20,7 +20,7 @@ public class DoubleNoteScore : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (TotalNote == 10)
+        if (TotalNote >= 10)
         {
             noteCount += 1;
             TotalNote = 0;
